@@ -9,7 +9,7 @@ import jakarta.annotation.PostConstruct;
 @SpringBootApplication
 public class ThriftWareApplication {
 
-	@Value("${PORT:10101}")
+	@Value("${PORT:8080}")
     private String port;
 	public static void main(String[] args) {
 		SpringApplication.run(ThriftWareApplication.class, args);
@@ -17,7 +17,7 @@ public class ThriftWareApplication {
 
 	@PostConstruct
 	public void init() {
-		System.out.println("Application is running on port: " + System.getenv("PORT"));
+		System.out.println("Application is running on port: " + System.getenv("PORT") + " My Port : " +port);
 	}
 
 }
