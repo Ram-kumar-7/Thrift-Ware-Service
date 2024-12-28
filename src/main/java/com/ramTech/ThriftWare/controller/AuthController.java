@@ -15,6 +15,11 @@ public class AuthController {
     @Autowired
     private UserRepository userRepository;
 
+    @GetMapping("/")
+    public String hello() {
+      return String.format("Hello world from Java Spring Boot!");
+    }
+
     @PutMapping("sign-in")
     public ResponseEntity<String> signIn(@RequestBody User loginRequest) {
         try {
